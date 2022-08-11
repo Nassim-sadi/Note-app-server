@@ -1,0 +1,41 @@
+<div>
+  <div class='flex justify-between items-baseline mt-14'>
+
+    <h2 id='titleH2' class='text-indigo-400 mt-0 important'>
+      {{note.title}}
+    </h2>
+    {{!-- <input
+      type='text'
+      id='title'
+      name='title'
+      required
+      class='rounded focus:border-indigo-400 mb-8 hidden'
+      value=' {{note.title}}'
+    /> --}}
+    <div class='flex gap-4'>
+      <a
+        href='/notes/edit/{{note._id}}'
+        id='addBtn'
+        class='no-underline tooltip'
+      >
+        <span class='tooltiptext text-sm'>Edit</span>
+        <i class='fa fa-edit text-blue-500'></i>
+      </a>
+      <form method='POST' action='/notes/{{note._id}}'>
+        <input type='hidden' name='_method' value='DELETE' />
+        <button type='submit' id='delete' class='tooltip'>
+          <span class='tooltiptext text-sm'>Delete</span>
+          <i class='fa fa-trash text-red-400'></i>
+        </button>
+      </form>
+
+    </div>
+  </div>
+  <div class='mb-4 text-grey-darker flex-1'>
+    {{{note.body}}}
+  </div>
+  <small class='text-sm text-gray-500'>
+    {{formatDate note.createdAt 'MMMM Do YYYY, h:mm a'}}
+  </small>
+
+</div>

@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  background-color: ghostwhite;
+}
+p {
+ @apply m-0 !important
+}
+.login-container {
+  @apply max-w-fit mx-auto mt-[10vh] text-center
+}
+.divider{
+  @apply h-0 w-full border-t border-gray-400 my-4 mx-0
+}
+/* .mobile-menu-button >svg{
+    pointer-events: none;
+
+} */
+[type='text']	,
+[type='email']	,
+[type='url']	,
+[type='password']	,
+[type='number']	,
+[type='date']	,
+[type='datetime-local'],
+[type='month'],
+[type='search']	,
+[type='tel']	,
+[type='time']	,
+[type='week']	,
+textarea	,
+select,
+[type='checkbox'],
+[type='radio']{
+  @apply bg-white border-none focus:border-indigo-400 rounded-xl px-2
+}
+.button{
+  @apply rounded-lg py-0 px-2 m-2 bg-gray-200 text-gray-800
+}
+.cancel{
+  @apply rounded-lg px-3 py-1.5 m-2 bg-gray-200 text-gray-800
+}
+.buttons{
+  @apply flex float-right
+}
+#title{
+  @apply border border-solid border-gray-200
+}
+h3{
+  @apply m-0 !important
+}
+a{
+  @apply no-underline 
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 5px;
+ 
+  /* Position the tooltip text - see examples below! */
+  top: 150%;
+  left: 50%;
+  margin-left: -50px;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+ .tooltip .tooltiptext {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  opacity: 1;
+}
+
+.notification{
+  position: absolute;
+  display: flex;
+  top: 0.25rem;
+  left: (50% - width);
+	height: 40px;
+	border-radius: 0px 0px 5px 5px;
+	margin: 0 auto;
+  left: 0;
+  right: 0;
+	box-shadow: #95a5a6 0px 0px 6px 2px;
+	color: white;
+	line-height: 40px;
+	animation: reveal 1 2s;
+}
+.notification .title{
+	margin-right: 15px;
+	padding: 0px 15px;
+	line-height: 40px;
+
+}
+
+.notification .close{
+	background: rgba(255,255,255,0.2);
+	padding: 0px 15px;
+	line-height: 40px;
+	color: white;
+  justify-self: end;
+}
+.notification .close:hover{
+  cursor: pointer;
+}
+.notification.closed{
+	transform: translate(0px, -60px);
+	transition: 0.7s;
+}
+
+@keyframes reveal{
+	0%{
+		transform: translate(0px, -50px);
+	}
+	50%{
+		transform: translate(0px, -50px);
+	}
+	100%{
+		transform: translate(0px, 0px);
+	}
+}
+
+
+.notification.success{
+	background: #2ecc71;
+}
+.notification.success .title{
+	background: #27ae60;
+}
+
+.notification.error{
+	background: #e74c3c;
+}
+.notification.error .title{
+	background: #c0392b;
+}
+
+.notification.warning{
+	background: #f1c40f;
+}
+.notification.warning .title{
+	background: #f39c12;
+}
+
+.notification.normal{
+	background: #3498db;
+}
+.notification.normal .title{
+	background: #2980b9;
+}
+h2{
+  margin-top: 2px !important
+}
+img{
+ @apply my-0 !important
+}

@@ -1,0 +1,38 @@
+{{>_add_btn}}
+<h1>Dashboard</h1>
+<h2>Hello {{name}} !</h2>
+{{#if messages.info}} 
+    <div class="notification {{messages.info}}  mx-auto max-w-sm" >
+      <span class="title">: )&nbsp;&nbsp;&nbsp;&nbsp;Success</span>
+      <span class="flex-grow">the note was {{messages.info}}
+      </span>
+      <span class="close">X</span>
+    </div>
+{{/if}}
+<div class='grid gap-3 grid-flow-row  grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+  {{#if notes}}
+    {{#each notes}}
+      <div class='bg-white rounded-lg shadow-lg p-4'>
+        {{! <div
+            class='bg-cover h-48'
+            style='background-image: url(https://images.unsplash.com/photo-1523978591478-c753949ff840?w=900);'
+          ></div> }}
+
+        <h3 class='mb-4 text-2xl'>
+          <a href='/notes/{{_id}} ' class='no-underline text-indigo-400'>
+            {{title}}
+          </a>
+        </h3>
+        <div class='mb-4 text-grey-darker text-sm '>
+          {{{truncate (stripTags body) 150}}}
+        </div>
+        <small class='text-sm text-gray-500'>
+          {{formatDate createdAt 'MMMM Do YYYY, h:mm a'}}
+        </small>
+
+      </div>
+    {{/each}}
+  {{else}}
+    <p>You have not written any Notes</p>
+  {{/if}}
+</div>

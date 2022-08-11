@@ -1,0 +1,29 @@
+<h3>Add Note</h3>
+<div class='row'>
+  <form action='/notes' method='POST' class='col s12'>
+
+    <div class='form-input'>
+      <label for='title' class="block" aria-placeholder="Title here">Title</label>
+
+      <input
+        type='text'
+        id='title'
+        name='title'
+        required
+        class='rounded focus:border-indigo-400'
+      />
+    </div>
+
+    <div class='input-field'>
+      <h5>Write your Note:</h5>
+      <textarea id='default-editor' name='body'></textarea>
+    </div>
+    <div class="buttons">
+
+    <button type='submit' value='Save'class='button bg-gray-100'>
+      Save<button/>
+    <a href='/dashboard' class='cancel no-underline'>Cancel</a>
+    </div>
+
+  </form>
+</div>
