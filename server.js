@@ -25,10 +25,10 @@ app.use(
     }
   })
 );
-//load config
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config({ path: 'config/config.env' });
-}
+// //load config
+// if (process.env.NODE_ENV !== 'production') {
+//   require('dotenv').config({ path: 'config/config.env' });
+// }
 //passport config
 require('./config/passport')(passport);
 //connect to Database
@@ -73,16 +73,8 @@ app.use('/auth', require('./routes/auth'));
 app.use('/notes', require('./routes/notes'));
 //static folder
 app.use(express.static(path.join(__dirname + '/public')));
-app.use(
-  '/tinymce',
-  express.static(path.join(__dirname, 'node_modules', 'tinymce'))
-);
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 const port = process.env.PORT || 3000;
 
 //start server
-app.listen(
-  port,
-  console.log(
-    `Server is running in ${process.env.NODE_ENV} mode on port ${port}`
-  )
-);
+app.listen(port, console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${port}`));
